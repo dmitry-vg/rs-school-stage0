@@ -443,8 +443,9 @@ body {
   margin: 0 auto;
 }
 
+/*header styles start*/
 .header {
-  background-color: #000;
+  background-color: #0C0C0E;
   width: 100%;
   height: 90px;
 }
@@ -482,3 +483,26 @@ body {
 .header__link:hover, .header__link:focus, .header__link:active{
   opacity: .75;
 }
+/*header styles end*/
+
+/* Welcome styles start */
+
+.welcome{
+ 
+  background: url(../assets/img/welcome.jpeg) no-repeat center;
+  background-size: cover;
+  
+  width: 1440px;
+  height: 600px;
+}
+.welcome_layout{
+  display: flex;
+  position: fixed;
+  background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
+  width: 1440px;
+  height: 300px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/*Welcome styles end*/
