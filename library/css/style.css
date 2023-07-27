@@ -566,7 +566,7 @@ h1 {
 
 }
 
-.section__line{
+.section__line {
 
   width: 50px;
   height: 1px;
@@ -574,26 +574,143 @@ h1 {
   flex-shrink: 0;
   background: #0C0C0E;
 }
-.section__text{
+
+.section__text {
   text-align: center;
 }
+
 /* Section title styles end */
 
 /* About styles start */
 
-.about__images{
+.about__images {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 20px;
 }
-.about__item{
+
+.about__item {
   max-width: 450px;
   max-height: 560px;
   margin-left: 25px;
-  
+
 }
-.about__item:first-child{
+
+.about__item:first-child {
   margin-left: 0;
 }
+
+
+.about__pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pagination__item {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #0C0C0E;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin-right: 10px;
+
+}
+
+.pagination__link {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  cursor: pointer;
+  /* width: 16px;
+  height: 16px;
+  background: #0C0C0E;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin-right: 10px; */
+}
+
+.pagination__item:active, .pagination__item:hover, .pagination__item:focus {
+  background: #BB945F;
+}
+
 /* About styles end */
+
+/* Favorites styles start */
+
+.section__text-favorites {
+
+  font-weight: 700;
+  line-height: normal;
+}
+
+.favorites__list {
+  margin-top: 40px;
+}
+
+/*обнуляем стандартный стиль*/
+.favorites__item {
+  margin-right: 20px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+}
+
+.favorites__item+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/*задаем новый стиль для кнопки*/
+.favorites__item+label::before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/*эффект при нажатии*/
+.favorites__item:not(:disabled):active+label::before {
+  background-color: #000;
+  border-color: #ffffff;
+
+}
+
+/*эффект когда конпка выбрана*/
+.favorites__item:checked+label::before {
+  border: #000000 double 9px;
+  background-color: #ffffff;
+
+}
+
+/*меняем стиль label при нажатой кнопке*/
+.favorites__list input[type="radio"]:checked+label {
+  font-weight: 700;
+}
+
+.favorites__label {
+  margin-right: 90px;
+
+}
+
+
+
+/* Favorites styles end */
