@@ -436,11 +436,13 @@ body {
   font-size: 20px;
   font-weight: normal;
   color: #000;
+  background-color: #000;
 }
 
 .body__wrapper {
   max-width: 1440px;
   margin: auto;
+  background-color: #ffffff;
 }
 
 .wrapper {
@@ -707,15 +709,20 @@ h1 {
 }
 
 .favorites__label {
-  margin-right: 90px;
+  
+  padding: 5px 90px 5px 0;
+  cursor:pointer
 
 }
 .favorites__list-book{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-right: 60px;
 }
 .favorites__item-book{
+  display: flex;
+    align-items: flex-end;
   width: 550px;
   height: 555px;
   border: 1px solid #000;
@@ -723,5 +730,109 @@ h1 {
   margin-top: 40px;
 }
 
+.favorites__wrapper{
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.favorites__label-book{
+  display: inline-block;
+  color: #000;
+font-family: Forum;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 200% */
+letter-spacing: 2px;
+text-transform: capitalize;
+}
+.favorites__line{
+  width: 60px;
+height: 1px;
+background: #BB945F;
+}
+.favorites__title{
+  margin-top: 20px;
+}
+.book-name{
+  color: #000;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px; /* 266.667% */
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+.book-author{
+  color: #000;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px;
+letter-spacing: 2px;
+text-transform: capitalize;
+}
+.book-description{
+  width: 355px;
+  height: 320px;
+margin-top: 20px;
+  color: #000;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 266.667% */
+letter-spacing: 2px;
+text-transform: capitalize;
+}
+.book__button{
+  color: #0C0C0E;
+text-align: center;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1px;
+width: 75px;
+height: 30px;
+flex-shrink: 0;
+border-radius: 2px;
+border: 1px solid #0C0C0E;
+background-color: white;
+margin-top: 15px;
+}
+
+.book__button:focus, .book__button:active, .book__button:hover{
+  border-radius: 2px;
+border: 1px solid #BB945F;
+background: #BB945F;
+transition: 1s linear;
+}
+
+.button__own{
+  color: #BB945F;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #BB945F;
+  background-color: white;
+  width: 75px;
+height: 30px;
+flex-shrink: 0;
+}
+
+.book__img{
+  width: 200px;
+height: 300px;
+flex-shrink: 0;
+}
 
 /* Favorites styles end */
