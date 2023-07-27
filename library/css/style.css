@@ -710,7 +710,18 @@ h1 {
   margin-right: 90px;
 
 }
-
+.favorites__list-book{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.favorites__item-book{
+  width: 550px;
+  height: 555px;
+  border: 1px solid #000;
+  background: #FFF;
+  margin-top: 40px;
+}
 
 
 /* Favorites styles end */
