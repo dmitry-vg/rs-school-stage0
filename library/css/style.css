@@ -836,3 +836,86 @@ flex-shrink: 0;
 }
 
 /* Favorites styles end */
+
+/* Coffee shop styles start */
+.coffee-shop .wrapper{
+  margin-top: 40px;
+}
+
+.coffee-shop .section__text{
+ line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+}
+
+.menu__list{
+  display: flex;
+    flex-direction: column;
+}
+
+.menu__list h2 {
+  color: #BB945F;
+font-family: Forum;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 100% */
+letter-spacing: 2px;
+text-transform: capitalize;
+}
+.menu__list.right h2 {
+text-align: right;
+}
+
+.menu__list.left .menu__item{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menu__list.right .menu__item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.menu__list.left .menu__item-name{
+ line-height: 40px; /* 200% */
+ letter-spacing: 1px;
+ text-transform: capitalize;
+margin-right: 60px;
+width: 196px;
+}
+.menu__list.right .menu__item-name{
+ line-height: 40px; /* 200% */
+ letter-spacing: 1px;
+ text-transform: capitalize;
+margin-right: 60px;
+
+}
+.menu__item-price{
+  color: #000;
+font-family: Forum;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 200% */
+letter-spacing: 2px;
+text-transform: capitalize;
+}
+.menu__item-line{
+  width: 100px;
+height: 1px;
+background: #BB945F;
+margin-right: 60px;
+}
+/* Coffee shop styles end */
