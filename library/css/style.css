@@ -438,7 +438,9 @@ body {
   color: #000;
   background-color: #000;
 }
-
+body a:hover{
+  color: #BB945F;
+}
 .body__wrapper {
   max-width: 1440px;
   margin: auto;
