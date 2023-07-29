@@ -474,8 +474,12 @@ body a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
-
+.header__logo{
+  margin-top: 10px;
+}
 .header__list {
   display: flex;
   flex-wrap: wrap;
@@ -881,7 +885,7 @@ h1 {
   flex-direction: column;
 }
 
-.menu__list h2 {
+.menu__list h3 {
   color: #BB945F;
   font-family: Forum;
   font-size: 40px;
@@ -893,7 +897,7 @@ h1 {
   text-transform: capitalize;
 }
 
-.menu__list.right h2 {
+.menu__list.right h3 {
   text-align: right;
 }
 
@@ -1211,6 +1215,15 @@ form.librarycard__form {
 .footer__weekday, .footer__weekend {
   width: 149px;
   text-align: right;
+}
+.footer__social-block ol{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer__social-block li{
+  margin-right: 15px;
 }
 
 .footer__part-second {
