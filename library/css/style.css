@@ -448,8 +448,8 @@ body a:hover{
 }
 
 .wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 20px;
 }
 
 /*header styles start*/
@@ -1153,4 +1153,85 @@ margin: auto;
 }
 
 
-/* Library card styles end
+/* Library card styles end*/
+
+/*Footer style start*/
+
+.footer{
+  background: #0C0C0E;
+  height: 250px;
+  padding-top: 20px;
+}
+.footer__info{
+height: 90px;
+align-items: flex-start;
+color: #FFF;
+font-size: 15px;
+
+}
+
+
+.footer__part-first{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    justify-content: space-between;
+    height: 40px;
+}
+.footer__adress{
+  width: 229px;
+  
+}
+.footer__adress a{
+  text-decoration: none;
+  color: #FFF;
+}
+
+.footer__weekday, .footer__weekend{
+  width: 149px;
+  text-align: right;
+}
+
+.footer__part-second{
+  display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    height: 40px;
+}
+.footer__line{
+  width: 100%;
+height: 1px;
+background: #FFF;
+margin: 30px auto 0;
+
+}
+.footer__rs{
+  display: flex;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: 2px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 44px auto;
+  
+}
+.footer__rs-rs a{
+  text-decoration: none;
+  color: #FFF;
+}
+.footer__rs-username{
+  line-height: 40px;
+}
+.footer__rs-username a{
+  text-decoration: none;
+  color: #FFF;
+}
+
+/*Footer style end*/
