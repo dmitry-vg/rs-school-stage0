@@ -485,6 +485,7 @@ body a:hover {
   flex-wrap: wrap;
 }
 
+
 .header__item {
   margin-right: 30px;
 }
@@ -500,6 +501,21 @@ body a:hover {
 
 .header__link:hover, .header__link:focus, .header__link:active {
   opacity: .75;
+}
+
+.header__burger{
+  display: none;
+}
+@media (max-width:1024px) {
+  .header__list{
+    display: none;
+  }
+  .header__burger{
+    display: block;
+  }
+  .header__profile{
+    margin-right: 40px;
+  }
 }
 
 /*header styles end*/
