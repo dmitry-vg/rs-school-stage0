@@ -477,9 +477,11 @@ body a:hover {
   align-items: center;
   margin-top: 10px;
 }
-.header__logo{
+
+.header__logo {
   margin-top: 10px;
 }
+
 .header__list {
   display: flex;
   flex-wrap: wrap;
@@ -503,17 +505,20 @@ body a:hover {
   opacity: .75;
 }
 
-.header__burger{
+.header__burger {
   display: none;
 }
+
 @media (max-width:1024px) {
-  .header__list{
+  .header__list {
     display: none;
   }
-  .header__burger{
+
+  .header__burger {
     display: block;
   }
-  .header__profile{
+
+  .header__profile {
     margin-right: 40px;
   }
 }
@@ -571,9 +576,10 @@ h1 {
 /*Welcome styles end*/
 
 /* Section title styles start */
-.favorites .wrapper{
+.favorites .wrapper {
   margin-top: 60px;
 }
+
 .section__title {
   display: flex;
   flex-direction: column;
@@ -612,6 +618,14 @@ h1 {
 /* Section title styles end */
 
 /* About styles start */
+.about .wrapper {
+  margin-top: 20px;
+}
+
+
+.about, .section__text{
+  line-height: 40px;
+}
 
 .about__images {
   display: flex;
@@ -623,7 +637,7 @@ h1 {
 .about__item {
   max-width: 450px;
   max-height: 560px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 
 }
 
@@ -670,6 +684,42 @@ h1 {
 
 .pagination__item:active, .pagination__item:hover, .pagination__item:focus {
   background: #BB945F;
+}
+
+.link_4, .link_5{ /*скрываем лишние точки навигации*/
+  display: none;
+}
+.carret__left, .carret_right {
+  display: none;
+}
+
+@media (max-width: 1455px) {
+  .about__item.image_3{
+    display: none;
+  }
+}
+@media (max-width: 983px) {
+  .about__item.image_2{
+    display: none;
+  }
+}
+@media (max-width: 768px){
+  .carret__left, .carret_right {
+    display: block;
+    margin-top: 35px;
+  }
+  .about__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    flex-direction: row;
+}
+.about__pagination {
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+}
 }
 
 /* About styles end */
@@ -750,7 +800,7 @@ h1 {
 }
 
 @media (max-width: 1280px) {
-  .favorites__list-book{
+  .favorites__list-book {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1244,13 +1294,15 @@ form.librarycard__form {
   width: 149px;
   text-align: right;
 }
-.footer__social-block ol{
+
+.footer__social-block ol {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.footer__social-block li{
+
+.footer__social-block li {
   margin-right: 15px;
 }
 
