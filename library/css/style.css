@@ -1200,7 +1200,7 @@ p.staff{
   line-height: normal;
   letter-spacing: 0.6px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 form.librarycard__form {
@@ -1209,7 +1209,7 @@ form.librarycard__form {
   flex-shrink: 0;
   border: 3px solid #BB945F;
   background: #FFF;
-  margin-bottom: 41px;
+  margin-bottom: 40px;
   box-shadow: -4px 5px 5px #00000026;
 }
 
@@ -1288,6 +1288,40 @@ form.librarycard__form {
   border: 1px solid #BB945F;
   background: #BB945F;
   transition: 0.2s linear;
+}
+.up {
+  margin-right: 10px;
+}
+@media (max-width: 1140px) {
+  .librarycard__content{
+    flex-direction: column;
+    align-content: center;
+  }
+  .librarycard__login{
+    align-items: stretch;
+  }
+  .librarycard__login p {
+    text-align: center;
+    width: 600px;
+  }
+  .form-title{
+    margin-bottom: 27px;
+  }
+  form.librarycard__form{
+    margin-bottom: 25px;
+  }
+  .librarycard .wrapper {
+    margin-bottom: 25px;
+  }
+  .librarycard__login-button{
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .librarycard__login-description{
+    margin-bottom: 45px;
+  }
+
 }
 
 
