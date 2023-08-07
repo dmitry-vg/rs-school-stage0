@@ -953,13 +953,13 @@ h1 {
 
 /* Coffee shop styles start */
 .coffee-shop .wrapper {
-  margin-top: 40px;
+  margin-top: 65px;
 }
 
 .coffee-shop .section__text {
   line-height: 40px;
   /* 200% */
-  letter-spacing: 2px;
+  letter-spacing: 1.7px;
 }
 
 .menu {
@@ -1029,6 +1029,9 @@ h1 {
   margin-right: 60px;
 
 }
+.menu__list.right{
+  margin-left: auto;
+}
 
 .menu__item-price {
   color: #000;
@@ -1052,6 +1055,9 @@ h1 {
 /* Coffee shop styles end */
 
 /* Contacts styles start */
+.contacts .wrapper {
+  margin-top: 65px;
+}
 
 .contacts__list {
   display: flex;
@@ -1079,7 +1085,7 @@ p.title {
 }
 
 .contacts__staff .title {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 p.phone {
@@ -1098,11 +1104,30 @@ p.phone {
 .email {
   font-weight: 700;
 }
+p.staff{
+  letter-spacing: 2px;
+}
+.contacts__map img {
+  max-width: 696px;
+    width: 100%;
+}
+@media (max-width: 1270px) {
+  .contacts__item{
+    margin-bottom: 110px;
+  }
+  .contacts__map{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 /* Contacts styles end */
 
 
 /* Library card styles start */
+.librarycard .wrapper{
+  margin-top: 60px;
+}
 
 .librarycard__content {
   display: flex;
