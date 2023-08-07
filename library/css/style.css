@@ -689,7 +689,7 @@ h1 {
 .link_4, .link_5{ /*скрываем лишние точки навигации*/
   display: none;
 }
-.carret__left, .carret_right {
+.carret__left, .carret__right {
   display: none;
 }
 
@@ -790,6 +790,21 @@ h1 {
 
   padding: 5px 90px 5px 0;
   cursor: pointer
+}
+
+@media (max-width: 1024px) {
+  .favorites__list{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .favorites__label {
+
+    padding: 3px 27px 5px 0;
+    cursor: pointer
+  }
 }
 
 .favorites__list-book {
