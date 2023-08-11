@@ -477,19 +477,22 @@ body a:hover {
   align-items: center;
   margin-top: 10px;
 }
-.header__logo{
+
+.header__logo {
   margin-top: 10px;
 }
+
 .header__list {
   display: flex;
   flex-wrap: wrap;
 }
 
+
 .header__item {
   margin-right: 30px;
 }
 
-.header__link {
+.header__link, .header__link-mobile {
   color: #FFF;
 
   font-size: 20px;
@@ -497,9 +500,82 @@ body a:hover {
   font-weight: 400;
   text-decoration: none;
 }
+.wrapper__nav-block{
+  margin: 0 20px;
+  
+}
+.header__nav-interface{
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 31px;
+}
+.header__nav-interface .header__profile-pic{
+  margin-right: 40px;
+}
+.header__link-mobile{
+  line-height: 250%;
+}
+
+.header__nav-mobile{
+  display: flex;
+  justify-content: center;
+}
+.header__list-mobile{
+  display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 41px;
+}
 
 .header__link:hover, .header__link:focus, .header__link:active {
   opacity: .75;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__nav-block{
+  width: 332px;
+  height: 570px;
+  background: #000;
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  overflow: hidden;
+  max-height: 570px;
+  transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+}
+.header__nav-block-close{
+  max-height: 0;
+ transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+
+.header__profile-pic:hover, .header__burger-x:hover{
+  transition-duration: .2s;
+  transform: rotate(0.1turn);
+}
+.header__burger:hover{
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+@media (max-width:1024px) {
+  .header__list {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__profile {
+    margin-right: 40px;
+  }
 }
 
 /*header styles end*/
@@ -555,12 +631,15 @@ h1 {
 /*Welcome styles end*/
 
 /* Section title styles start */
+.favorites .wrapper {
+  margin-top: 60px;
+}
 
 .section__title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .section__heading {
@@ -594,6 +673,14 @@ h1 {
 /* Section title styles end */
 
 /* About styles start */
+.about .wrapper {
+  margin-top: 20px;
+}
+
+
+.about, .section__text{
+  line-height: 40px;
+}
 
 .about__images {
   display: flex;
@@ -605,7 +692,7 @@ h1 {
 .about__item {
   max-width: 450px;
   max-height: 560px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 
 }
 
@@ -652,6 +739,42 @@ h1 {
 
 .pagination__item:active, .pagination__item:hover, .pagination__item:focus {
   background: #BB945F;
+}
+
+.link_4, .link_5{ /*скрываем лишние точки навигации*/
+  display: none;
+}
+.carret__left, .carret__right {
+  display: none;
+}
+
+@media (max-width: 1455px) {
+  .about__item.image_3{
+    display: none;
+  }
+}
+@media (max-width: 983px) {
+  .about__item.image_2{
+    display: none;
+  }
+}
+@media (max-width: 768px){
+  .carret__left, .carret_right {
+    display: block;
+    margin-top: 35px;
+  }
+  .about__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    flex-direction: row;
+}
+.about__pagination {
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+}
 }
 
 /* About styles end */
@@ -724,11 +847,37 @@ h1 {
   cursor: pointer
 }
 
+@media (max-width: 1024px) {
+  .favorites__list{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .favorites__label {
+
+    padding: 3px 27px 5px 0;
+    cursor: pointer
+  }
+}
+
 .favorites__list-book {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-right: 60px;
+  /* margin-right: 60px; */
+}
+
+@media (max-width: 1280px) {
+  .favorites__list-book {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-right: 60px; */
+    flex-direction: column;
+    align-content: center;
+  }
 }
 
 .favorites__item-book {
@@ -739,12 +888,11 @@ h1 {
   border: 1px solid #000;
   background: #FFF;
   margin-top: 40px;
+  margin-right: 40px;
 }
 
 .favorites__wrapper {
-  margin-bottom: 15px;
-  margin-left: 20px;
-  margin-top: 15px;
+  margin: 20px 15px;
 }
 
 .favorites__label-book {
@@ -860,13 +1008,13 @@ h1 {
 
 /* Coffee shop styles start */
 .coffee-shop .wrapper {
-  margin-top: 40px;
+  margin-top: 65px;
 }
 
 .coffee-shop .section__text {
   line-height: 40px;
   /* 200% */
-  letter-spacing: 2px;
+  letter-spacing: 1.7px;
 }
 
 .menu {
@@ -936,6 +1084,9 @@ h1 {
   margin-right: 60px;
 
 }
+.menu__list.right{
+  margin-left: auto;
+}
 
 .menu__item-price {
   color: #000;
@@ -959,6 +1110,9 @@ h1 {
 /* Coffee shop styles end */
 
 /* Contacts styles start */
+.contacts .wrapper {
+  margin-top: 65px;
+}
 
 .contacts__list {
   display: flex;
@@ -986,7 +1140,7 @@ p.title {
 }
 
 .contacts__staff .title {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 p.phone {
@@ -1005,11 +1159,30 @@ p.phone {
 .email {
   font-weight: 700;
 }
+p.staff{
+  letter-spacing: 2px;
+}
+.contacts__map img {
+  max-width: 696px;
+    width: 100%;
+}
+@media (max-width: 1270px) {
+  .contacts__item{
+    margin-bottom: 110px;
+  }
+  .contacts__map{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 /* Contacts styles end */
 
 
 /* Library card styles start */
+.librarycard .wrapper{
+  margin-top: 60px;
+}
 
 .librarycard__content {
   display: flex;
@@ -1082,7 +1255,7 @@ p.phone {
   line-height: normal;
   letter-spacing: 0.6px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 form.librarycard__form {
@@ -1091,7 +1264,7 @@ form.librarycard__form {
   flex-shrink: 0;
   border: 3px solid #BB945F;
   background: #FFF;
-  margin-bottom: 41px;
+  margin-bottom: 40px;
   box-shadow: -4px 5px 5px #00000026;
 }
 
@@ -1171,6 +1344,40 @@ form.librarycard__form {
   background: #BB945F;
   transition: 0.2s linear;
 }
+.up {
+  margin-right: 10px;
+}
+@media (max-width: 1140px) {
+  .librarycard__content{
+    flex-direction: column;
+    align-content: center;
+  }
+  .librarycard__login{
+    align-items: stretch;
+  }
+  .librarycard__login p {
+    text-align: center;
+    width: 600px;
+  }
+  .form-title{
+    margin-bottom: 27px;
+  }
+  form.librarycard__form{
+    margin-bottom: 25px;
+  }
+  .librarycard .wrapper {
+    margin-bottom: 25px;
+  }
+  .librarycard__login-button{
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .librarycard__login-description{
+    margin-bottom: 45px;
+  }
+
+}
 
 
 /* Library card styles end*/
@@ -1216,13 +1423,15 @@ form.librarycard__form {
   width: 149px;
   text-align: right;
 }
-.footer__social-block ol{
+
+.footer__social-block ol {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.footer__social-block li{
+
+.footer__social-block li {
   margin-right: 15px;
 }
 
