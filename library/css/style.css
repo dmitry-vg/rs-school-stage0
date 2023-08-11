@@ -516,14 +516,7 @@ body a:hover {
 .header__link-mobile{
   line-height: 250%;
 }
-.header__nav-block{
-  /* display: none; */
-  z-index: 1;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-    
-}
+
 .header__nav-mobile{
   display: flex;
   justify-content: center;
@@ -544,11 +537,25 @@ body a:hover {
 .header__burger {
   display: none;
 }
+
 .header__nav-block{
   width: 332px;
   height: 570px;
   background: #000;
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  overflow: hidden;
+  max-height: 570px;
+  transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
 }
+.header__nav-block-close{
+  max-height: 0;
+ transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+
 .header__profile-pic:hover, .header__burger-x:hover{
   transition-duration: .2s;
   transform: rotate(0.1turn);

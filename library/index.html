@@ -45,17 +45,17 @@
                 <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
               
             </div>
-            <div class="header__burger">
+            <div class="header__burger" id="mobile-burger" onclick="showMenu()">
               <img src="assets/svg/burger.svg" alt="burger menu">
             </div>
-            <div class="header__nav-block">
+            <div class="header__nav-block header__nav-block-close" id="mobile-menu">
               <div class="wrapper__nav-block">
                 <div class="header__nav-interface">
                   
                     <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
                   
 
-                  <img src="assets/svg/burger-x.svg" alt="burger-x" class="header__burger-x">
+                  <div class="close-menu" onclick="closeMenu()"><img src="assets/svg/burger-x.svg" alt="burger-x" class="header__burger-x"></div>
 
                 </div>
                 <nav class="header__nav-mobile">
