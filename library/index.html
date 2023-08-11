@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <script src="index.js"></script>
   <title>Welcome to the Brooklyn Library</title>
 </head>
+
 <body>
   <div class="body__wrapper">
     <header class="header">
@@ -39,9 +41,43 @@
               </ul>
             </nav>
             <div class="header__profile">
-              <a href="#!" class="header__profile-link">
-                <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="geader__profile-pic">
-              </a>
+              
+                <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
+              
+            </div>
+            <div class="header__burger" id="mobile-burger" onclick="showMenu()">
+              <img src="assets/svg/burger.svg" alt="burger menu">
+            </div>
+            <div class="header__nav-block header__nav-block-close" id="mobile-menu">
+              <div class="wrapper__nav-block">
+                <div class="header__nav-interface">
+                  
+                    <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
+                  
+
+                  <div class="close-menu" onclick="closeMenu()"><img src="assets/svg/burger-x.svg" alt="burger-x" class="header__burger-x"></div>
+
+                </div>
+                <nav class="header__nav-mobile">
+                  <ul class="header__list-mobile">
+                    <li class="header__item-mobile">
+                      <a href="#about" class="header__link-mobile">About</a>
+                    </li>
+                    <li class="header__item-mobile">
+                      <a href="#favorites" class="header__link-mobile">Favorites</a>
+                    </li>
+                    <li class="header__item-mobile">
+                      <a href="#coffee" class="header__link-mobile">Coffee shop</a>
+                    </li>
+                    <li class="header__item-mobile">
+                      <a href="#contacts" class="header__link-mobile">Contacts</a>
+                    </li>
+                    <li class="header__item-mobile">
+                      <a href="#librarycard" class="header__link-mobile">Library Card</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
@@ -63,16 +99,20 @@
               shop inside </p>
           </div>
           <div class="about__images">
-            <img class="about__item" src="assets/img/image1.jpg" alt="image 1">
-            <img class="about__item" src="assets/img/image2.jpg" alt="image 2">
-            <img class="about__item" src="assets/img/image3.jpg" alt="image 3">
+            <img src="assets/svg/Carret_Left.svg" class="carret__left" alt="Carret_Left">
+            <img class="about__item image_1" src="assets/img/image1.jpg" alt="image 1">
+            <img class="about__item image_2" src="assets/img/image2.jpg" alt="image 2">
+            <img class="about__item image_3" src="assets/img/image3.jpg" alt="image 3">
+            <img src="assets/svg/Carret_Right.svg" class="carret__right" alt="Carret_Right">
           </div>
           <div class="about__pagination">
-            <ol class="pagination__list">
-              <li class="pagination__item"><a href="#!" class="pagination__link active"></a></li>
-              <li class="pagination__item"><a href="#!" class="pagination__link"></a></li>
-              <li class="pagination__item"><a href="#!" class="pagination__link"></a></li>
-            </ol>
+            <ul class="pagination__list">
+              <li class="pagination__item link_1"><a href="#!" class="pagination__link active"></a></li>
+              <li class="pagination__item link_2"><a href="#!" class="pagination__link"></a></li>
+              <li class="pagination__item link_3"><a href="#!" class="pagination__link"></a></li>
+              <li class="pagination__item link_4"><a href="#!" class="pagination__link"></a></li>
+              <li class="pagination__item link_5"><a href="#!" class="pagination__link"></a></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -171,7 +211,7 @@
             <div class="section__line"></div>
             <p class="section__text">In our library, we have of cozy coffee shop, welcoming in customers with frothy
               cappuccinos and friendly conversation.
-              you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can
+              You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can
               try desserts from bakery.</p>
           </div>
           <div class="menu">
@@ -326,11 +366,11 @@
               <div class="footer__social-block">
                 <ol>
                   <li><a href="https://twitter.com/" target="_blank"><img src="assets/svg/u_twitter-alt.svg"
-                    alt="twitter"></a></li>
+                        alt="twitter"></a></li>
                   <li><a href="https://www.instagram.com/" target="_blank"><img src="assets/svg/u_instagram.svg"
-                    alt="instagram"></a></li>
+                        alt="instagram"></a></li>
                   <li><a href="https://www.facebook.com/" target="_blank"> <img src="assets/svg/u_facebook-f.svg"
-                    alt="facebook"></a></li>
+                        alt="facebook"></a></li>
                 </ol>
               </div>
               <div class="footer__weekend">
@@ -354,4 +394,5 @@
     </main>
   </div>
 </body>
+
 </html>
