@@ -100,18 +100,24 @@
           </div>
           <div class="about__images">
             <img src="assets/svg/Carret_Left.svg" class="carret__left" alt="Carret_Left">
-            <img class="about__item image_1" src="assets/img/image1.jpg" alt="image 1">
-            <img class="about__item image_2" src="assets/img/image2.jpg" alt="image 2">
-            <img class="about__item image_3" src="assets/img/image3.jpg" alt="image 3">
+            <div class="carousel-wrapper" id="carousel-wrapper">
+              <div class="carousel" id="carousel">
+                <img class="about__item image_1" src="assets/img/image1.jpg" alt="image 1">
+                <img class="about__item image_2" src="assets/img/image2.jpg" alt="image 2">
+                <img class="about__item image_3" src="assets/img/image3.jpg" alt="image 3">
+                <img class="about__item image_4" src="assets/img/image4.jpg" alt="image 4">
+                <img class="about__item image_5" src="assets/img/image5.jpg" alt="image 5">
+              </div>
+            </div>
             <img src="assets/svg/Carret_Right.svg" class="carret__right" alt="Carret_Right">
           </div>
           <div class="about__pagination">
             <ul class="pagination__list">
-              <li class="pagination__item link_1"><a href="#!" class="pagination__link active"></a></li>
-              <li class="pagination__item link_2"><a href="#!" class="pagination__link"></a></li>
-              <li class="pagination__item link_3"><a href="#!" class="pagination__link"></a></li>
-              <li class="pagination__item link_4"><a href="#!" class="pagination__link"></a></li>
-              <li class="pagination__item link_5"><a href="#!" class="pagination__link"></a></li>
+              <li class="pagination__item link_1" id="link_1"></li>
+              <li class="pagination__item link_2" id="link_2"></li>
+              <li class="pagination__item link_3" id="link_3"></li>
+              <li class="pagination__item link_4" id="link_4"></li>
+              <li class="pagination__item link_5" id="link_5"></li>
             </ul>
           </div>
         </div>
@@ -125,7 +131,7 @@
           <div class="favorites__form">
             <p class="section__text-favorites">Pick favorites of season</p>
             <form class="favorites__list">
-              <input type="radio" id="winter" name="favorites" class="favorites__item"><label for="winter"
+              <input type="radio" id="winter" name="favorites" class="favorites__item" checked><label for="winter"
                 class="favorites__label">Winter</label>
               <input type="radio" id="spring" name="favorites" class="favorites__item"><label for="spring"
                 class="favorites__label">Spring</label>
