@@ -690,13 +690,18 @@ h1 {
 }
 .carousel{
   display: flex;
-    justify-content: space-around;
+   
     gap: 20px;
     position: relative;
-    left: 475px;
+   
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
 }
 .carousel-wrapper{
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 .about__item {
   max-width: 450px;
@@ -735,6 +740,9 @@ h1 {
   cursor: pointer;
 
 }
+.pagination__item:active{
+  background-color: #BB945F;
+}
 
 /* .pagination__link {
   display: inline-block;
@@ -753,12 +761,30 @@ h1 {
 .pagination__item:active, .pagination__item:hover, .pagination__item:focus {
   background: #BB945F;
 }
-#link_1 {
+.btn_active {
   background: #BB945F;
+  cursor: no-drop;
+} 
+.link_4, .link_5{
+  display: none;
+} 
+
+@media (max-width: 1440px) {
+.carousel-wrapper {
+  
+  width: 940px;
+  
 }
-@media (min-width: 983px) {
-  .link_4, .link_5{ /*скрываем лишние точки навигации*/
-    display: none;
+@media (max-width: 1440px) {
+  .link_4{
+    display: block;
+  }
+}
+
+}
+@media (max-width: 983px) {
+  .link_5{ /*скрываем лишние точки навигации*/
+    display: block;
   }
 }
 
@@ -766,15 +792,19 @@ h1 {
   display: none;
 }
 
-@media (max-width: 1455px) {
+/* @media (max-width: 1455px) {
   .about__item.image_3{
     display: none;
   }
-}
+} */
 @media (max-width: 983px) {
-  .about__item.image_2{
+  /* .about__item.image_2{
     display: none;
+  } */
+  .carousel-wrapper{
+    width: 470px;
   }
+
 }
 @media (max-width: 768px){
   .carret__left, .carret__right {
@@ -795,8 +825,15 @@ h1 {
   justify-content: center;
   margin: 25px auto;
 }
+.carousel-wrapper {
+  
+  margin-left: 0; 
+  margin-right: 0;
 }
 
+}
+
+/* анимация перемещения слайдера
 @keyframes link_1 {
   from {left: 0px;}
   to {left: 475px;}
@@ -812,8 +849,8 @@ h1 {
 .transition-link_2 {
   animation-name: link_2;
   animation-duration: 5s;
-}
-@keyframes link_3 {
+} */
+/* @keyframes link_3 {
   from {left: 0px;}
   to {left: -475px;}
 }
@@ -821,6 +858,14 @@ h1 {
   animation-name: link_3;
   animation-duration: 5s;
 }
+.transition-link_4 {
+  animation-name: link_4;
+  animation-duration: 5s;
+}
+.transition-link_5 {
+  animation-name: link_5;
+  animation-duration: 5s;
+} */
 
 /* About styles end */
 

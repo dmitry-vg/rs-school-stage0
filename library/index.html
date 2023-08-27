@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <script src="index.js"></script>
+  <script src="index.js" async></script>
   <title>Welcome to the Brooklyn Library</title>
 </head>
 
@@ -41,9 +41,9 @@
               </ul>
             </nav>
             <div class="header__profile">
-              
-                <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
-              
+
+              <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
+
             </div>
             <div class="header__burger" id="mobile-burger" onclick="showMenu()">
               <img src="assets/svg/burger.svg" alt="burger menu">
@@ -51,11 +51,12 @@
             <div class="header__nav-block header__nav-block-close" id="mobile-menu">
               <div class="wrapper__nav-block">
                 <div class="header__nav-interface">
-                  
-                    <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
-                  
 
-                  <div class="close-menu" onclick="closeMenu()"><img src="assets/svg/burger-x.svg" alt="burger-x" class="header__burger-x"></div>
+                  <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic">
+
+
+                  <div class="close-menu" onclick="closeMenu()"><img src="assets/svg/burger-x.svg" alt="burger-x"
+                      class="header__burger-x"></div>
 
                 </div>
                 <nav class="header__nav-mobile">
@@ -113,7 +114,7 @@
           </div>
           <div class="about__pagination">
             <ul class="pagination__list">
-              <li class="pagination__item link_1" id="link_1"></li>
+              <li class="pagination__item link_1 btn_active" id="link_1"></li>
               <li class="pagination__item link_2" id="link_2"></li>
               <li class="pagination__item link_3" id="link_3"></li>
               <li class="pagination__item link_4" id="link_4"></li>
