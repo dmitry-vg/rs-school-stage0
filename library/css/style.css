@@ -697,6 +697,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     flex-direction: row;
+    transition: all 0.8s;
 }
 .carousel-wrapper{
   overflow: hidden;
@@ -810,6 +811,10 @@ h1 {
   .carret__left, .carret__right {
     display: block;
     margin-top: 35px;
+    cursor: pointer;
+  }
+  .carret__left:hover, .carret__right:hover{
+    background-color: #00000008;
   }
   .about__images {
     width: 100%;

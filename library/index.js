@@ -7,6 +7,38 @@ function showMenu(){
 function closeMenu(){
   document.getElementById('mobile-menu').classList.toggle('header__nav-block-close');
 }
+
+const SLIDER = document.querySelector('#carousel');
+const LEFT_ARROW = document.querySelector('.carret__left');
+const RIGHT_ARROW = document.querySelector('.carret__right');
+const INDICATOR_LIST = document.querySelector('.pagination__list');
+
+let sectionIndex = 0;
+
+document.querySelectorAll('.pagination__list li').forEach(function(indicator, ind){
+  indicator.addEventListener('click', function(){
+    sectionIndex = ind;
+    document.querySelector('.pagination__list .btn_active').classList.remove('btn_active');
+    indicator.classList.add('btn_active');
+    SLIDER.style.transform = 'translate(' + (sectionIndex) * -465 + 'px)';
+
+  });
+});
+
+LEFT_ARROW.addEventListener('click', function(){
+  sectionIndex = (sectionIndex > 0) ? sectionIndex - 1: 0;
+  document.querySelector('.pagination__list .btn_active').classList.remove('btn_active');
+  INDICATOR_LIST.children[sectionIndex].classList.add('btn_active')
+  SLIDER.style.transform = 'translate(' + (sectionIndex) * -465 + 'px)';
+})
+RIGHT_ARROW.addEventListener('click', function(){
+  sectionIndex = (sectionIndex < 4) ? sectionIndex + 1: 4;
+  document.querySelector('.pagination__list .btn_active').classList.remove('btn_active');
+  INDICATOR_LIST.children[sectionIndex].classList.add('btn_active')
+  SLIDER.style.transform = 'translate(' + (sectionIndex) * -465 + 'px)';
+})
+
+
 // анимация замены картинки при клике
 //const BTN_LINK_1 = document.querySelector('#link_1');
 // const BTN_LINK_2 = document.querySelector('#link_2');
