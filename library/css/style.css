@@ -508,10 +508,10 @@ body a:hover {
   display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 31px;
+    margin-top: 27px;
 }
 .header__nav-interface .header__profile-pic{
-  margin-right: 40px;
+  margin-right: 44px;
 }
 .header__link-mobile{
   line-height: 250%;
@@ -545,7 +545,7 @@ body a:hover {
   z-index: 1;
   position: absolute;
   top: 0px;
-  right: 20px;
+  right: 5px;
   overflow: hidden;
   max-height: 570px;
   transition: max-height 0.8s cubic-bezier(1, 1, 1, 1);
@@ -885,6 +885,18 @@ h1 {
 .favorites__list {
   margin-top: 40px;
 }
+.book-name{
+  width: max-content;
+}
+.favorites__wrapper__title{
+  margin: 14px 19px 0px;
+}
+.favorites__wrapper_description{
+  display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
 
 /*обнуляем стандартный стиль*/
 .favorites__item {
@@ -976,8 +988,7 @@ h1 {
 }
 
 .favorites__item-book {
-  display: flex;
-  align-items: flex-end;
+  display: block;
   width: 550px;
   height: 555px;
   border: 1px solid #000;
@@ -987,7 +998,7 @@ h1 {
 }
 
 .favorites__wrapper {
-  margin: 20px 15px;
+  margin: -4px 19px;
 }
 
 .favorites__label-book {
@@ -1039,7 +1050,7 @@ h1 {
 .book-description {
   width: 355px;
   height: 320px;
-  margin-top: 20px;
+  margin-top: 42px;
   color: #000;
   font-family: Inter;
   font-size: 15px;
@@ -1066,7 +1077,7 @@ h1 {
   border-radius: 2px;
   border: 1px solid #0C0C0E;
   background-color: white;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .book__button:focus, .book__button:active, .book__button:hover {
