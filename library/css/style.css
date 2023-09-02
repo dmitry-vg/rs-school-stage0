@@ -898,6 +898,7 @@ h1 {
 }
 
 
+
 /*обнуляем стандартный стиль*/
 .favorites__item {
   margin-right: 20px;
@@ -970,31 +971,67 @@ h1 {
 }
 
 .favorites__list-book {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   justify-content: space-between;
   /* margin-right: 60px; */
+ /* display: none;
+  opacity: 0;  */
+  visibility: hidden ;
+  transition: all 2s;
 }
+/* #winter__book{
+  display: flex;
+  opacity: 1; 
+  visibility: visible ;
+} */
+
+.hide-zero__list-book{
+  opacity: 0; 
+  visibility: hidden;
+}
+.hide__list-book{
+  opacity: 1; 
+  visibility: visible;
+}
+
+.none__list-book{
+  display: none;
+}
+.block__list-book{
+  display: flex;
+}
+.favorites__list-book{
+  transition: all 2s;
+}
+
 
 @media (max-width: 1280px) {
   .favorites__list-book {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: space-between;
     /* margin-right: 60px; */
     flex-direction: column;
     align-content: center;
   }
+
+  .favorites__form{ /*прилипание выбора книг*/
+    position: sticky;
+    background: white;
+    top: 0px;
+    z-index: 1;
 }
 
 .favorites__item-book {
-  display: block;
+ 
   width: 550px;
   height: 555px;
   border: 1px solid #000;
   background: #FFF;
   margin-top: 40px;
   margin-right: 40px;
+ 
 }
 
 .favorites__wrapper {
@@ -1109,6 +1146,8 @@ h1 {
   height: 300px;
   flex-shrink: 0;
 }
+
+
 
 /* Favorites styles end */
 

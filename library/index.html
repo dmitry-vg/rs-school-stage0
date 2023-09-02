@@ -132,18 +132,18 @@
           <div class="favorites__form">
             <p class="section__text-favorites">Pick favorites of season</p>
             <form class="favorites__list">
-              <input type="radio" id="winter" name="favorites" class="favorites__item" checked><label for="winter"
+              <input type="radio" data-tab="winter" id="winter-input" name="favorites" class="favorites__item" checked><label for="winter-input"
                 class="favorites__label">Winter</label>
-              <input type="radio" id="spring" name="favorites" class="favorites__item"><label for="spring"
+              <input type="radio" data-tab="spring" id="spring-input" name="favorites" class="favorites__item"><label for="spring-input"
                 class="favorites__label">Spring</label>
-              <input type="radio" id="summer" name="favorites" class="favorites__item"><label for="summer"
+              <input type="radio" data-tab="summer" id="summer-input" name="favorites" class="favorites__item"><label for="summer-input"
                 class="favorites__label">Summer</label>
-              <input type="radio" id="autumn" name="favorites" class="favorites__item"><label for="autumn"
+              <input type="radio" data-tab="autumn" id="autumn-input" name="favorites" class="favorites__item"><label for="autumn-input"
                 class="favorites__label">Autumn</label>
             </form>
           </div>
 
-          <div class="favorites__list-book" id="winter__book">
+          <div class="favorites__list-book block__list-book hide__list-book" data-tab-content id="winter">
             <div class="favorites__item-book">
               <div class="book__title">
                 <div class="favorites__wrapper__title">
@@ -232,7 +232,7 @@
             </div>
             </div>
           </div>
-          <div class="favorites__list-book" id="spring__book">
+          <div class="favorites__list-book hide-zero__list-book none__list-book" data-tab-content id="spring">
             <div class="favorites__item-book">
               <div class="book__title">
                 <div class="favorites__wrapper__title">
@@ -319,7 +319,7 @@
             </div>
             </div>
           </div>
-          <div class="favorites__list-book" id="summer__book">
+          <div class="favorites__list-book hide-zero__list-book none__list-book" data-tab-content id="summer">
             <div class="favorites__item-book">
               <div class="book__title">
                 <div class="favorites__wrapper__title">
@@ -408,7 +408,7 @@
             </div>
             </div>
           </div>
-          <div class="favorites__list-book" id="autumn__book">
+          <div class="favorites__list-book  hide-zero__list-book none__list-book" data-tab-content id="autumn">
             <div class="favorites__item-book">
               <div class="book__title">
                 <div class="favorites__wrapper__title">
