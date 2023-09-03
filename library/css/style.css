@@ -1016,7 +1016,7 @@ h1 {
     align-content: center;
   }
 
-  .favorites__form{ /*прилипание выбора книг*/
+  .favorites__form { /*прилипание выбора книг*/
     position: sticky;
     background: white;
     top: 0px;
@@ -1033,7 +1033,7 @@ h1 {
   margin-right: 40px;
  
 }
-
+}
 .favorites__wrapper {
   margin: -4px 19px;
 }

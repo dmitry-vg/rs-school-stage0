@@ -56,7 +56,7 @@ FILTER.forEach(function(item){
     LIST_BOOK.forEach(function(item){
       item.classList.remove('hide__list-book');
       item.classList.add('hide-zero__list-book');
-      setTimeout(() => item.classList.add('none__list-book'), 2000)
+      setTimeout(() => item.classList.add('none__list-book'), 1900)
       setTimeout(() => item.classList.remove('block__list-book'), 2000);
     });
       const SELECT_BOOK = document.querySelector('#' + this.dataset.tab);
