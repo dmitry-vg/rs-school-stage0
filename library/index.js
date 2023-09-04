@@ -46,10 +46,7 @@ RIGHT_ARROW.addEventListener('click', function(){
 
 
 const FILTER = document.querySelectorAll('[data-tab]');
-console.log(FILTER);
 const LIST_BOOK = document.querySelectorAll('[data-tab-content]');
-console.log(LIST_BOOK);
-
 FILTER.forEach(function(item){
 
   item.addEventListener('click',function(){
@@ -67,6 +64,25 @@ FILTER.forEach(function(item){
 
 
 //закрытие открытие меню навигации
+
+const ICON_PROFILE = document.querySelector('#header__profile-pic');
+const ICON_PROFILE_MOBILE = document.querySelector('#header__profile-pic-mobile');
+const AUTH_MENU = document.querySelector('.menu__no__auth');
+
+ICON_PROFILE.addEventListener('click', function(){
+  AUTH_MENU.classList.toggle('header__nav-block-close');
+  });
+ICON_PROFILE_MOBILE.addEventListener('click', function(){
+  AUTH_MENU.classList.toggle('header__nav-block-close');
+  });
+
+// function showMenu(){
+  
+//   document.getElementById('header__profile-pic').classList.remove('header__nav-block-close');
+// }
+// function closeMenu(){
+//   document.getElementById('header__profile-pic').classList.toggle('header__nav-block-close');
+// }
 
 // const LIST_BOOK = document.querySelectorAll('.favorites__list-book');
 // const FILTER = document.querySelectorAll('.favorites__list input');
