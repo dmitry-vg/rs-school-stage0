@@ -66,6 +66,8 @@ FILTER.forEach(function(item){
 })
 
 
+//закрытие открытие меню навигации
+
 // const LIST_BOOK = document.querySelectorAll('.favorites__list-book');
 // const FILTER = document.querySelectorAll('.favorites__list input');
 
