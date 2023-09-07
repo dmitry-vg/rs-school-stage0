@@ -1,12 +1,15 @@
 console.log('1. Вёрстка соответствует макету. Ширина экрана 768px +26\n 2. Ни на одном из разрешений до 640px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +12\n На ширине экрана 768рх реализовано адаптивное меню +12\n Общая оценка 50 баллов')
-
+const BODY = document.querySelector('.body__wrapper');
 //анимация меню
+const BURGER_MENU = document.getElementById('mobile-menu');
 function showMenu(){
   
-  document.getElementById('mobile-menu').classList.remove('header__nav-block-close');
+  BURGER_MENU.classList.remove('header__nav-block-close');
+  AUTH_MENU.classList.add('header__nav-block-close'); // закрыть меню авторизации
 }
 function closeMenu(){
-  document.getElementById('mobile-menu').classList.toggle('header__nav-block-close');
+  BURGER_MENU.classList.toggle('header__nav-block-close');
+  
 }
 
 
@@ -63,7 +66,7 @@ FILTER.forEach(function(item){
 })
 
 
-//закрытие открытие меню навигации
+//закрытие открытие меню авторизации
 
 const ICON_PROFILE = document.querySelector('#header__profile-pic');
 const ICON_PROFILE_MOBILE = document.querySelector('#header__profile-pic-mobile');
@@ -71,10 +74,16 @@ const AUTH_MENU = document.querySelector('.menu__no__auth');
 
 ICON_PROFILE.addEventListener('click', function(){
   AUTH_MENU.classList.toggle('header__nav-block-close');
+  BODY.classList.add('close-all');
+  console.log('ICON');
   });
 ICON_PROFILE_MOBILE.addEventListener('click', function(){
   AUTH_MENU.classList.toggle('header__nav-block-close');
+  BURGER_MENU.classList.toggle('header__nav-block-close');
+  console.log('ICON-MOBILE');
   });
+
+
 
 // function showMenu(){
   
