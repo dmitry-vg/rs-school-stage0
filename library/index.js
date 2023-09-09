@@ -1,5 +1,5 @@
 console.log('Полностью сделан 1 этап и чать 2 этапа, всего 58 баллов')
-const BODY = document.querySelector('.body__wrapper');
+
 //анимация меню
 const BURGER_MENU = document.getElementById('mobile-menu');
 function showMenu(){
@@ -11,6 +11,9 @@ function closeMenu(){
   BURGER_MENU.classList.toggle('header__nav-block-close');
   
 }
+BURGER_MENU.addEventListener('click', function(){
+  BURGER_MENU.classList.toggle('header__nav-block-close');
+  });
 
 
 //анимация слайдера
@@ -72,16 +75,19 @@ const ICON_PROFILE = document.querySelector('#header__profile-pic');
 const ICON_PROFILE_MOBILE = document.querySelector('#header__profile-pic-mobile');
 const AUTH_MENU = document.querySelector('.menu__no__auth');
 
+
 ICON_PROFILE.addEventListener('click', function(){
   AUTH_MENU.classList.toggle('header__nav-block-close');
-  BODY.classList.add('close-all');
-  console.log('ICON');
+  });
+AUTH_MENU.addEventListener('click', function(){
+  AUTH_MENU.classList.toggle('header__nav-block-close');
   });
 ICON_PROFILE_MOBILE.addEventListener('click', function(){
   AUTH_MENU.classList.toggle('header__nav-block-close');
   BURGER_MENU.classList.toggle('header__nav-block-close');
-  console.log('ICON-MOBILE');
   });
+
+
 
 
 
