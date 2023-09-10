@@ -51,7 +51,7 @@
                   </div>
                   <div class="menu__no__auth-body">
                     <p>Log In</p>
-                    <p>Register</p>
+                    <p><a href="#!" data-modal-button="register" id="menu__auth-register">Register</a></p>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@
                   <img src="assets/svg/icon_profile.svg" alt="icon_profile" class="header__profile-pic" id="header__profile-pic-mobile">
 
 
-                  <div class="close-menu" onclick="closeMenu()"><img src="assets/svg/burger-x.svg" alt="burger-x"
+                  <div class="close-menu"><img src="assets/svg/burger-x.svg" alt="burger-x"
                       class="header__burger-x"></div>
 
                 </div>
@@ -648,7 +648,7 @@
                 </p>
               </div>
               <div class="librarycard__login-button">
-                <button class="up">Sign Up</button>
+                <button class="up" data-modal-button = "register">Sign Up</button>
                 <button class="in">Log in</button>
               </div>
             </div>
@@ -701,4 +701,29 @@
       </footer>
     </main>
   </div>
+<div class="fade-register hidden" data-modal-register>
+    <div class="modal__register modal__window">
+      <div class="register__close-menu" data-modal-close>
+        <img class="register__close-menu-item" src="assets/svg/close_btn.svg" alt="close_btn" >
+      </div>
+     <div class="modal__register-wrap">
+        <form class="form__register">
+          <div class="form__register-title">
+            <h3 class="register-title">REGISTER</h3>
+  
+          </div>
+          <div class="form__register-item">
+            <label for="name">First name</label><input type="text" id="name">
+            <label for="last-name">Last name</label><input type="text" id="last-name">
+            <label for="user-email">E-mail</label><input type="email" id="user-email">
+            <label for="user-password">Password</label><input type="password" id="user-password">
+            <input type="submit" value="Sign Up" id="form__register-submit" >
+            <p class="modal__register-verification">Already have an account? <a href="#!" class="link__login">Login</a></p>
+            
+          </div>
+        </form>
+     </div>
+    </div>
+</div>
+</body>
 </html>
