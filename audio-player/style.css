@@ -1,48 +1,48 @@
 /* Reset and base styles  */
 * {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+  padding: 0px;
+  margin: 0px;
+  border: none;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Links */
 
-a, a:link, a:visited  {
-    text-decoration: none;
+a, a:link, a:visited {
+  text-decoration: none;
 }
 
-a:hover  {
-    text-decoration: none;
+a:hover {
+  text-decoration: none;
 }
 
 /* Common */
 
 aside, nav, footer, header, section, main {
-	display: block;
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    font-size: inherit;
-	font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 ul, ul li {
-	list-style: none;
+  list-style: none;
 }
 
 img {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 img, svg {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 address {
@@ -52,74 +52,79 @@ address {
 /* Form */
 
 input, textarea, button, select {
-	font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
 }
 
 input::-ms-clear {
-	display: none;
+  display: none;
 }
 
 button, input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    background: none;
-    cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
 }
 
 input:focus, input:active,
 button:focus, button:active {
-    outline: none;
+  outline: none;
 }
 
 button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
+  padding: 0;
+  border: 0;
 }
 
 label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 legend {
-	display: block;
+  display: block;
 }
+
 /*End reset css*/
 
 html {
   font-family: 'Montserrat', sans-serif;
 }
-body{
-  background: linear-gradient(15deg, #E70BCF, #FF668E, #E9AA95, #F7CBA2,#FEEEB9
-  );
+
+body {
+  background: linear-gradient(15deg, #E70BCF, #FF668E, #E9AA95, #F7CBA2, #FEEEB9);
 }
+
 #boxes {
   display: grid;
   grid-template-columns: max-content max-content;
- 
   place-content: center;
-  height: 100vh;
+  height: 80vh;
 }
+
 #player01 {
   grid-area: A;
   padding: 50px 38px;
 }
 
-#player01 .wrapper{
+#player01 .wrapper {
   width: 190px;
 }
-#player01 img{
+
+#player01 img {
   width: 190px;
   height: 190px;
   object-fit: cover;
   border-radius: 10px;
 }
+
 #player01 .info {
   padding-top: 28px;
 }
+
 .player {
   background-color: #08074717;
   border: 1px black solid;
@@ -138,7 +143,7 @@ body{
 
 
 .info {
- color: #E1E1E6;
+  color: #E1E1E6;
 }
 
 .info p {
@@ -164,7 +169,8 @@ body{
   justify-content: space-between;
   padding-top: 20px;
 }
-#controls img{
+
+#controls img {
   width: 57px;
   height: 57px;
 }
@@ -173,13 +179,12 @@ body{
 
 .track-line {
   padding-top: 28px;
- position: relative;
- width: 0%;
-    height: 3px;
-    background-color: #47474746
- 
-
+  position: relative;
+  width: 0%;
+  height: 3px;
+  background-color: #47474746
 }
+
 /* 
 .track-line::before {
 content: '';
@@ -217,11 +222,39 @@ border-radius: 10px;
   justify-content: space-between;
   padding-top: 9.6px;
 }
-svg{
+
+svg {
   width: 57px;
   height: 57px;
 }
 
 .hidden {
   display: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+  background-color: #474747;
+}
+
+.footer img {
+  height: 100px;
+}
+
+.copyright {
+  font-size: x-large;
+  margin-top: 10px;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.social img {
+  margin-right: 10px;
 }
