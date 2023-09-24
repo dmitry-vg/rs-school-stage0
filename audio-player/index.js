@@ -10,8 +10,22 @@ let playList = [
     artist: "Leibonik",
     wrapperSong: "leibonik-alvaryya.jpg",
     src: "leibonik-alvaryya.mp3"
+  },
+  {
+    song: "Касіў Ясь канюшыну",
+    artist: "Песняры",
+    wrapperSong: "pesnyary.webp",
+    src: "Песняры - Косил Ясь конюшину.mp3"
+  },
+  {
+    song: "God Save The Queen",
+    artist: "Sex Pistols",
+    wrapperSong: "sex-pistols_-_god-save-the-queen.jpg",
+    src: "sex-pistols_-_god-save-the-queen.mp3"
   }
 ];
+
+let numberSong = playList.length -1 ;
 
 let audio = document.getElementById('audio');
 let song = document.getElementById('song');
@@ -19,7 +33,9 @@ let artist = document.getElementById('artist');
 let wrapperSong = document.getElementById('wrapper-song');
 let playBtn = document.getElementById('playBtn');
 let pauseBtn = document.getElementById('pauseBtn');
-let trackLine = document.getElementsByClassName('track-line');
+let trackLine = document.getElementById('track-line');
+let nextBtn = document.getElementById('nextBtn');
+let prevBtn = document.getElementById('prevBtn');
 let track; // Переменная с индексом трека
  
 // Событие перед загрузкой страницы
@@ -36,7 +52,7 @@ function toggleBtn() {
 /*функция фключения песни и замены метаданных*/
 function switchTrack (numTrack) {
   // Меняем значение атрибута src
-  audio.src = './assets/audio/' + playList[numTrack].song;
+  audio.src = './assets/audio/' + playList[numTrack].src;
   wrapperSong.src = './assets/images/' + playList[numTrack].wrapperSong;
   artist.innerHTML = playList[numTrack].artist;
   song.innerHTML = playList[numTrack].song;
@@ -52,21 +68,17 @@ playBtn.addEventListener("click", function () {
   audio.play();
 
   audioPlay = setInterval(function() {
-    // Получаем значение на какой секунде песня
     let audioTime = Math.round(audio.currentTime);
-    // Получаем всё время песни
     let audioLength = Math.round(audio.duration)
-    // Назначаем ширину элементу time
-    time.style.width = (audioTime * 100) / audioLength + '%';
-    // Сравниваем, на какой секунде сейчас трек и всего сколько времени длится
-    // И проверяем что переменная treck меньше четырёх
-    if (audioTime == audioLength && track < 3) {
-        track++; // То Увеличиваем переменную 
-        switchTrack(track); // Меняем трек
-    // Иначе проверяем тоже самое, но переменная treck больше или равна четырём
-    } else if (audioTime == audioLength && track >= 3) {
-        treck = 0; // То присваиваем treck ноль
-        switchTrack(track); //Меняем трек
+    trackLine.style.width = (audioTime * 100) / audioLength + '%';
+
+    if (audioTime == audioLength && track < numberSong) {
+        track++; 
+        switchTrack(track);
+
+    } else if (audioTime == audioLength && track >= numberSong) {
+        track = 0; 
+        switchTrack(track); 
     }
 }, 10)
 })
@@ -76,6 +88,28 @@ playBtn.addEventListener("click", function () {
 pauseBtn.addEventListener("click", function () {
   toggleBtn();
   audio.pause();
+})
+
+/*переключение песен*/
+
+prevBtn.addEventListener("click", function(){
+  if (track > 0) {
+    track--;
+    switchTrack(track);
+  } else {
+    track = numberSong;
+    switchTrack(track);
+  }
+})
+
+nextBtn.addEventListener("click", function(){
+  if (track < numberSong){
+    track++;
+    switchTrack(track);
+  } else {
+    track = 0;
+    switchTrack(track);
+  }
 })
 
 
