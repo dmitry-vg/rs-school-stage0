@@ -25,7 +25,7 @@ let playList = [
   }
 ];
 
-let numberSong = playList.length -1 ;
+let numberSong = playList.length - 1;
 
 let audio = document.getElementById('audio');
 let song = document.getElementById('song');
@@ -39,37 +39,37 @@ let prevBtn = document.getElementById('prevBtn');
 let lastTime = document.getElementById('last-time');
 let totalTime = document.getElementById('total-time');
 let track; // Переменная с индексом трека
- 
+
 // Событие перед загрузкой страницы
-window.onload = function() {
-    track = 0; // Присваиваем переменной ноль
+window.onload = function () {
+  track = 0; // Присваиваем переменной ноль
 }
 
 /*Функция приведения секунд к минутам*/
-function secondsToTime(time){
+function secondsToTime(time) {
   var h = Math.floor(time / (60 * 60)),
-      dm = time % (60 * 60),
-      m = Math.floor(dm / 60),
-      ds = dm % 60,
-      s = Math.ceil(ds);
+    dm = time % (60 * 60),
+    m = Math.floor(dm / 60),
+    ds = dm % 60,
+    s = Math.ceil(ds);
   if (s === 60) {
-      s = 0;
-      m = m + 1;
+    s = 0;
+    m = m + 1;
   }
   if (s < 10) {
-      s = '0' + s;
+    s = '0' + s;
   }
   if (m === 60) {
-      m = 0;
-      h = h + 1;
+    m = 0;
+    h = h + 1;
   }
   if (m < 10) {
-      m = '0' + m;
+    m = '0' + m;
   }
   if (h === 0) {
-      fulltime = m + ':' + s;
+    fulltime = m + ':' + s;
   } else {
-      fulltime = h + ':' + m + ':' + s;
+    fulltime = h + ':' + m + ':' + s;
   }
   return fulltime;
 }
@@ -82,7 +82,7 @@ function toggleBtn() {
 }
 
 /*функция фключения песни и замены метаданных*/
-function switchTrack (numTrack) {
+function switchTrack(numTrack) {
   // Меняем значение атрибута src
   audio.src = './assets/audio/' + playList[numTrack].src;
   wrapperSong.src = './assets/images/' + playList[numTrack].wrapperSong;
@@ -99,7 +99,7 @@ playBtn.addEventListener("click", function () {
   toggleBtn();
   audio.play();
 
-  audioPlay = setInterval(function() {
+  audioPlay = setInterval(function () {
     let audioTime = Math.round(audio.currentTime);
     let audioLength = Math.round(audio.duration)
     trackLine.style.width = (audioTime * 100) / audioLength + '%';
@@ -107,14 +107,14 @@ playBtn.addEventListener("click", function () {
     totalTime.innerHTML = secondsToTime(audio.duration);
 
     if (audioTime == audioLength && track < numberSong) {
-        track++; 
-        switchTrack(track);
+      track++;
+      switchTrack(track);
 
     } else if (audioTime == audioLength && track >= numberSong) {
-        track = 0; 
-        switchTrack(track); 
+      track = 0;
+      switchTrack(track);
     }
-}, 10)
+  }, 10)
 })
 
 /*пауза*/
@@ -126,7 +126,7 @@ pauseBtn.addEventListener("click", function () {
 
 /*переключение песен*/
 
-prevBtn.addEventListener("click", function(){
+prevBtn.addEventListener("click", function () {
   if (track > 0) {
     track--;
     switchTrack(track);
@@ -136,8 +136,8 @@ prevBtn.addEventListener("click", function(){
   }
 })
 
-nextBtn.addEventListener("click", function(){
-  if (track < numberSong){
+nextBtn.addEventListener("click", function () {
+  if (track < numberSong) {
     track++;
     switchTrack(track);
   } else {
