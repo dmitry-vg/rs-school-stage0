@@ -252,9 +252,21 @@ svg {
 }
 
 .social {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 10px;
 }
 
 .social img {
   margin-right: 10px;
+}
+@media (max-width: 600px){
+  .footer img {
+    height: 60px;
+  }
+}
+@media (max-width: 400px){
+  .footer img {
+    height: 30px;
+  }
 }
