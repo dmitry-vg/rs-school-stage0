@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>js30#1.2-audio-player</title>
+</head>
+
+<body>
+  <main>
+
+    <audio src="./assets/audio/krambambulya-gosti.mp3" id="audio"></audio>
+    <div id="boxes">
+      <div id="player01" class="player">
+        <div class="wrapper">
+
+          <img src="assets/images/krambambulya-gosti.jpg" alt="LogoMusicImage" id="wrapper-song">
+          </a>
+          <div class="info">
+            <h1 id="song">Gosti</h1>
+            <p id="artist">Krambambulya</p>
+          </div>
+          <div class="controls" id="controls">
+            <div class="prev" id="prevBtn">
+              <img src="assets/svg/backward.png" alt="backward">
+            </div>
+            <div class="play" id="playBtn">
+              <img src="assets/svg/play.png" alt="play" id="playBtnImg">
+            </div>
+            <div class="pause hidden" id="pauseBtn">
+              <img src="assets/svg/pause.png" alt="pause">
+            </div>
+            <div class="next" id="nextBtn">
+              <img src="assets/svg/forward.png" alt="forward">
+            </div>
+          </div>
+          <div class="track-time">
+            <div class="track-line" id="track-line"></div>
+            <div class="time">
+              <div class="last-time" id="last-time">00:00</div>
+              <div class="total-time" id="total-time">00:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="social">
+      <a href="https://rs.school/js-stage0/" target="_blank"><img src="assets/svg/rs_school_js.svg"
+          alt="rs_school_js"></a>
+      <a href="https://www.linkedin.com/in/dzmitry-yushkevich-951096160/" target="_blank"><img
+          src="assets/svg/linkedIn.svg" alt="linkedIn"></a>
+      <a href="https://github.com/dmitry-vg" target="_blank"><img src="assets/svg/gitHub.svg" alt="gitHub"></a>
+
+    </div>
+    <div class="copyright">© Dzmitry Yushkevich 2023</div>
+  </footer>
+</body>
+<script src="index.js"></script>
+
+</html>
