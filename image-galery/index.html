@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header id="header">
+  <header id="header" class="header">
+    <div class="logo">
+      <h1>IMG Gallery</h1>
+    </div>
+    <div class="search-container">
+      <form class="form" id="form"> 
+        
+        <input   id="query" class="search" placeholder = "Search here!"  autofocus >
+        <div  class="submit" id="submit" value="Search" onclick="submitQuery()" >Search</div>
+        
+      </form>
+    </div>
 
   </header>
-  <main id="main">
-<div class="gallery" id="gallery"></div>
+  <main id="main" class="main">
+    <div class="wrapper">
+      <div class="gallery" id="gallery"></div>
+    </div>
   </main>
 
-    <footer class="footer">
-      <div class="social">
-        <a href="https://rs.school/js-stage0/" target="_blank"><img src="assets/svg/rs_school_js.svg"
-            alt="rs_school_js"></a>
-        <a href="https://www.linkedin.com/in/dzmitry-yushkevich-951096160/" target="_blank"><img
-            src="assets/svg/linkedIn.svg" alt="linkedIn"></a>
-        <a href="https://github.com/dmitry-vg" target="_blank"><img src="assets/svg/gitHub.svg" alt="gitHub"></a>
-  
-      </div>
-      <div class="copyright">© Dzmitry Yushkevich 2023</div>
+  <footer class="footer">
+    <div class="social">
+      <a href="https://rs.school/js-stage0/" target="_blank"><img src="assets/svg/rs_school_js.svg"
+          alt="rs_school_js"></a>
+      <a href="https://www.linkedin.com/in/dzmitry-yushkevich-951096160/" target="_blank"><img
+          src="assets/svg/linkedIn.svg" alt="linkedIn"></a>
+      <a href="https://github.com/dmitry-vg" target="_blank"><img src="assets/svg/gitHub.svg" alt="gitHub"></a>
+
+    </div>
+    <div class="copyright">© Dzmitry Yushkevich 2023</div>
 
   </footer>
 </body>
 <script src="index.js"></script>
+
 </html>
