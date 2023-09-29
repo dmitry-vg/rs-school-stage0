@@ -3,6 +3,7 @@ let query = 'belarus';
 
 let submit = document.getElementById('submit');
 let inputText = document.getElementById('query');
+let clearButton = document.getElementById('clear');
 let url = API + query;
 
 
@@ -36,6 +37,12 @@ async function getData() {
   showData(data);
 
 }
+
+//очищаем значение поля
+
+clearButton.addEventListener('click', function(){
+  inputText.value = "";
+})
 
 //подбираем по нажатию энтер
 inputText.addEventListener('keypress', function(event){
