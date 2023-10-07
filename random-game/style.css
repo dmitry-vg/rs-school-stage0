@@ -89,10 +89,11 @@ legend {
 }
 
 /*End reset css*/
+
 canvas {
   background: #eee;
   display: block;
-  margin: 15em auto;
+  margin: 3em auto;
 }
 .footer {
   margin-top: 15px;

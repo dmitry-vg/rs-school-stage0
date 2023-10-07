@@ -3,13 +3,9 @@ let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 
 
-//начальные координаты мяча
-let x = canvas.width / 2;
-let y = canvas.height - 30;
 
-//для смещения мяча
-let dx = 2;
-let dy = -2;
+let bumpAudio = document.getElementById('bump-audio');
+
 
 //радиус мяча
 let ballRadius = 10;
@@ -20,11 +16,19 @@ let paddleHeight = 10;
 let paddleWidth = 75;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
+//начальные координаты мяча
+let x = canvas.width / 2;
+let y = canvas.height - 20;
+//для смещения мяча
+let dx = 0;
+let dy = 0;
+
 //состояние клавиш
 let rightPressed = false;
 let leftPressed = false;
+let spacePressed = false;
 
-let speedGame = 10;
+
 
 
 //переменные для кирпичей
@@ -48,6 +52,8 @@ for (let c = 0; c < brickColumnCount; c++) {
 
 //очки
 let score = 0;
+
+let lives = 3
 
 
 
@@ -78,7 +84,7 @@ function drawBall() { //рисуем мяч
   ctx.closePath();
 }
 
-function drawPaddle() {//ракетка
+function drawPaddle() {//рисует ракетку
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
   ctx.fillStyle = "#0095DD";
@@ -86,13 +92,14 @@ function drawPaddle() {//ракетка
   ctx.closePath();
 }
 
-function draw() { //передвижение мяча
+function draw() { //сама игра
   ctx.clearRect(0, 0, canvas.width, canvas.height); //очистка от предыдущей отрисовки
   drawBall();
   drawPaddle();
   drawBricks();
   collisionDetection();
   drawScore();
+  drawLives()
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
@@ -100,13 +107,25 @@ function draw() { //передвижение мяча
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy
-
+      dy = -dy;
+      racketBump();
+      
     } else {
-      alert("Game Over\n" + 
-      'Score: ' + score);
-      document.location.reload();
-      clearInterval(interval);
+      lives --;
+      if (!lives) {
+        alert("Game Over\n" + 
+        'Score: ' + score);
+        document.location.reload();
+        
+      } else {
+        //стартовая позиция
+        x = canvas.width / 2;
+        y = canvas.height - 20;
+        dx = 0;
+        dy = 0   ;
+        paddleX = (canvas.width - paddleWidth) / 2;
+      }
+
     }
 
   }
@@ -120,11 +139,21 @@ function draw() { //передвижение мяча
   } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
+
+  requestAnimationFrame(draw);
 }
 
+//звуки
+function racketBump(){
+  bumpAudio.src = "./assets/audio/racket.mp3";
+}
+function brickBump(){
+  bumpAudio.src = "./assets/audio/brick.mp3";
+}
 //слушаем событие нажатия и отпускания кнопки, выполняем функции
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
+document.addEventListener('keydown', startGame, false);
 
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
@@ -150,6 +179,16 @@ function mouseMoveHandler(e){
   }
 }
 
+//функция старта игры
+function startGame(e) {
+  if(e.keyCode == 32) {
+    dx = 2;
+    dy = -2;
+  }
+  
+}
+
+
 function collisionDetection() { //отталкиваемся от кирпича
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
@@ -162,6 +201,7 @@ function collisionDetection() { //отталкиваемся от кирпича
         ) {
           dy = -dy;
           b.status = 0;
+          brickBump();
           score++;
           if (score == brickRowCount * brickColumnCount) {
             alert("YOU WIN, CONGRATULATIONS!\n" + 
@@ -181,4 +221,10 @@ function drawScore() {
   ctx.fillText('Score: ' + score, 8, 20);
 }
 
-let interval = setInterval(draw, speedGame);
+function drawLives() {
+  ctx.font = '16px Arial';
+  ctx.fillStyle = '0095DD';
+  ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+}
+
+draw();
