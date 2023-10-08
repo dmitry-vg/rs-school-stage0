@@ -4,7 +4,7 @@ var ctx = canvas.getContext('2d');
 
 
 
-var bumpAudio = document.getElementById('bump-audio');
+
 
 
 //радиус мяча
@@ -58,6 +58,65 @@ var lives = 3
 
 var level = 0;
 
+//для звука
+var bumpAudio = document.getElementById('bump-audio');
+var phoneMusic = document.getElementById('phone');
+var controlSound = document.getElementById('sound');
+var controlEffect = document.getElementById('effect');
+var controlMusic = document.getElementById('music');
+let itSound = false;
+let itSoundPump = false;
+let itMusic = false;
+
+
+
+controlSound.addEventListener("click", function(){
+  if(itSound){
+    itSound = false;
+    itSoundPump = false;
+    itMusic = false;
+    controlSound.src = "./assets/img/sound-off.png"
+    controlEffect.src = "./assets/img/sound-off.png";
+    controlMusic.src = "./assets/img/sound-off.png";
+    phoneMusic.src ="";
+  } else {
+    itSound = true;
+    itSoundPump = true;
+    itMusic = true;
+    controlSound.src = "./assets/img/sound-on.png"
+    phoneMusic.src = "./assets/audio/fon.mp3";
+    controlEffect.src = "./assets/img/sound-on.png";
+    controlMusic.src = "./assets/img/sound-on.png";
+  }
+})
+
+controlEffect.addEventListener("click", function(){
+  
+    if (itSoundPump) {
+      itSoundPump = false;
+      controlEffect.src = "./assets/img/sound-off.png";
+    } else {
+      itSoundPump = true;
+      itSound = true;
+      controlSound.src = "./assets/img/sound-on.png"
+      controlEffect.src = "./assets/img/sound-on.png";
+    }
+})
+
+controlMusic.addEventListener("click", function(){
+  if (itMusic) {
+    itMusic = false;
+    phoneMusic.src = "";
+    controlMusic.src = "./assets/img/sound-off.png";
+  } else {
+    itMusic = true;
+    controlMusic.src = "./assets/img/sound-on.png";
+    phoneMusic.src = "./assets/audio/fon.mp3";
+    itSound = true;
+    controlSound.src = "./assets/img/sound-on.png"
+  }
+})
+
 
 
 function drawBricks() { //рисуем кирпичи
@@ -104,6 +163,8 @@ function draw() { //сама игра
   drawScore();
   drawLives();
   drawLevel()
+  
+
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
@@ -112,7 +173,12 @@ function draw() { //сама игра
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
-      racketBump();
+      if(itSound){
+        if(itSoundPump){
+          racketBump(); //звук удара о ракетку
+        }
+      }
+      
 
     } else {
       lives--;
@@ -154,6 +220,8 @@ function racketBump() {
 function brickBump() {
   bumpAudio.src = "./assets/audio/brick.mp3";
 }
+
+
 //слушаем событие нажатия и отпускания кнопки, выполняем функции
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
@@ -193,7 +261,8 @@ function startGame(e) {
 }
 
 
-function collisionDetection() { //отталкиваемся от кирпича
+function collisionDetection() {   //отталкиваемся от кирпича
+
   for (var c = 0; c < brickColumnCount; c++) {
     for (var r = 0; r < brickRowCount; r++) {
       var b = brick[c][r];
@@ -205,7 +274,12 @@ function collisionDetection() { //отталкиваемся от кирпича
         ) {
           dy = -dy;
           b.status = 0;
-          brickBump();
+          if(itSound){
+            if(itSoundPump){
+              brickBump(); //звук удара о кирпич
+            }
+          }
+          
           score++;
           totalScore++
           if (score == brickRowCount * brickColumnCount) {
