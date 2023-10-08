@@ -13,12 +13,22 @@
     <div class="manual">Press "Space" to start. Move the racket with the mouse or left/right keys</div>
   </header>
   <audio autoplay  id="bump-audio" src=""></audio>
+  <audio autoplay loop  id="phone" src=""></audio>
   <div class="wrapper">
     <div class="wrapper__game">
       <div class="setting">
-        <div class="sound">Вкл/выкл звук</div>
-        <div class="pump">вкл/выкл удары</div>
-        <div class="music">вкл/выкл фоновую музыку</div>
+        <div class="sound">
+          <p>Sound</p>
+          <img src="./assets/img/sound-off.png" alt="sound" id="sound">
+        </div>
+        <div class="pump">
+          <p>Effect</p>
+          <img src="./assets/img/sound-off.png" alt="sound" id="effect">
+        </div>
+        <div class="music">
+          <p>Music</p>
+          <img src="./assets/img/sound-off.png" alt="sound" id="music">
+        </div>
       </div>
       
       <canvas id="canvas" class="canvas" width="480" height="320"></canvas>
