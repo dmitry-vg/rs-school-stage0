@@ -1,12 +1,8 @@
+console.log('70/60 Выполнены все требования к заданию. Добавлено упралвление звуковым сопровожденем. По сравнению с демо игры добавлены уровни прохождения и увеличение сложности игры')
+
 //переменные для работы с графикой
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-
-
-
-
-
-
 
 //радиус мяча
 var ballRadius = 10;
@@ -28,9 +24,6 @@ var dy = 0;
 var rightPressed = false;
 var leftPressed = false;
 var spacePressed = false;
-
-
-
 
 //переменные для кирпичей
 var brickRowCount = 3;
@@ -62,19 +55,19 @@ var level = 0;
 
 //выводим последние результаты
 let resultTable = [];
+let tbody = document.getElementById('tbody');
 
-for(let i=0; i<localStorage.length; i++) {
-
+for (let i = 0; i < localStorage.length; i++) {
   let key = localStorage.getItem(i + 1 + ' Score');
   resultTable.unshift(key);
+}
+for (let i = 0; i < 10; i++) {
+  let numberSequence = i + 1;
+  if (resultTable[i] == undefined) {
+    resultTable[i] = 0;
   }
-  for (let i = 0; i < 10; i++){
-    
-    if (resultTable[i] == undefined){
-      resultTable[i] = 0;
-    }
-    console.log(resultTable[i]);
-  }
+  tbody.insertAdjacentHTML("beforeend", "<tr><td>" + numberSequence + "</td><td>" + resultTable[i] + "</td></tr>")
+}
 
 
 
@@ -153,7 +146,6 @@ function drawBricks() { //рисуем кирпичи
         ctx.fill();
         ctx.closePath();
       }
-
     }
   }
 }
@@ -184,7 +176,6 @@ function draw() { //сама игра
   drawLives();
   drawLevel()
 
-
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
@@ -198,8 +189,6 @@ function draw() { //сама игра
           racketBump(); //звук удара о ракетку
         }
       }
-
-
     } else {
       lives--;
       if (!lives) {
@@ -209,7 +198,6 @@ function draw() { //сама игра
         //сохранение результата
         var numberGame = localStorage.length + 1;
         localStorage.setItem(numberGame + ' Score', totalScore)
-
       } else {
         //стартовая позиция
         x = canvas.width / 2;
@@ -218,13 +206,10 @@ function draw() { //сама игра
         dy = 0;
         paddleX = (canvas.width - paddleWidth) / 2;
       }
-
     }
-
   }
   x += dx;
   y += dy;
-
 
   //перемещаем ракетку
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
@@ -232,7 +217,6 @@ function draw() { //сама игра
   } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
-
   requestAnimationFrame(draw);
 }
 
@@ -243,7 +227,6 @@ function racketBump() {
 function brickBump() {
   bumpAudio.src = "./assets/audio/brick.mp3";
 }
-
 
 //слушаем событие нажатия и отпускания кнопки, выполняем функции
 document.addEventListener('keydown', keyDownHandler, false);
@@ -277,15 +260,12 @@ function mouseMoveHandler(e) {
 //функция старта игры
 function startGame(e) {
   if (e.keyCode == 32) {
-    dx = 7 + level;
-    dy = -10 - level;
+    dx = 4 + level;
+    dy = -4 - level;
   }
-
 }
 
-
 function collisionDetection() {   //отталкиваемся от кирпича
-
   for (var c = 0; c < brickColumnCount; c++) {
     for (var r = 0; r < brickRowCount; r++) {
       var b = brick[c][r];
@@ -302,12 +282,9 @@ function collisionDetection() {   //отталкиваемся от кирпич
               brickBump(); //звук удара о кирпич
             }
           }
-
           score++;
           totalScore++
           if (score == brickRowCount * brickColumnCount) {
-            // alert("YOU WIN, CONGRATULATIONS!\n" + 
-            // 'Score: ' + score);
             score = 0;
             lives++;
             level++
@@ -319,15 +296,11 @@ function collisionDetection() {   //отталкиваемся от кирпич
               brick[c] = [];
               for (var r = 0; r < brickRowCount; r++) {
                 brick[c][r] = { x: 0, y: 0, status: 1 };
-
               }
-
             }
-            // document.location.reload(); //перезапустить игру
           }
         }
       }
-
     }
   }
 }
