@@ -7,6 +7,7 @@ var ctx = canvas.getContext('2d');
 
 
 
+
 //радиус мяча
 var ballRadius = 10;
 
@@ -58,6 +59,25 @@ var lives = 3
 
 var level = 0;
 
+
+//выводим последние результаты
+let resultTable = [];
+
+for(let i=0; i<localStorage.length; i++) {
+
+  let key = localStorage.getItem(i + 1 + ' Score');
+  resultTable.unshift(key);
+  }
+  for (let i = 0; i < 10; i++){
+    
+    if (resultTable[i] == undefined){
+      resultTable[i] = 0;
+    }
+    console.log(resultTable[i]);
+  }
+
+
+
 //для звука
 var bumpAudio = document.getElementById('bump-audio');
 var phoneMusic = document.getElementById('phone');
@@ -70,15 +90,15 @@ let itMusic = false;
 
 
 
-controlSound.addEventListener("click", function(){
-  if(itSound){
+controlSound.addEventListener("click", function () {
+  if (itSound) {
     itSound = false;
     itSoundPump = false;
     itMusic = false;
     controlSound.src = "./assets/img/sound-off.png"
     controlEffect.src = "./assets/img/sound-off.png";
     controlMusic.src = "./assets/img/sound-off.png";
-    phoneMusic.src ="";
+    phoneMusic.src = "";
   } else {
     itSound = true;
     itSoundPump = true;
@@ -90,20 +110,20 @@ controlSound.addEventListener("click", function(){
   }
 })
 
-controlEffect.addEventListener("click", function(){
-  
-    if (itSoundPump) {
-      itSoundPump = false;
-      controlEffect.src = "./assets/img/sound-off.png";
-    } else {
-      itSoundPump = true;
-      itSound = true;
-      controlSound.src = "./assets/img/sound-on.png"
-      controlEffect.src = "./assets/img/sound-on.png";
-    }
+controlEffect.addEventListener("click", function () {
+
+  if (itSoundPump) {
+    itSoundPump = false;
+    controlEffect.src = "./assets/img/sound-off.png";
+  } else {
+    itSoundPump = true;
+    itSound = true;
+    controlSound.src = "./assets/img/sound-on.png"
+    controlEffect.src = "./assets/img/sound-on.png";
+  }
 })
 
-controlMusic.addEventListener("click", function(){
+controlMusic.addEventListener("click", function () {
   if (itMusic) {
     itMusic = false;
     phoneMusic.src = "";
@@ -163,7 +183,7 @@ function draw() { //сама игра
   drawScore();
   drawLives();
   drawLevel()
-  
+
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
@@ -173,12 +193,12 @@ function draw() { //сама игра
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
-      if(itSound){
-        if(itSoundPump){
+      if (itSound) {
+        if (itSoundPump) {
           racketBump(); //звук удара о ракетку
         }
       }
-      
+
 
     } else {
       lives--;
@@ -186,6 +206,9 @@ function draw() { //сама игра
         alert("Game Over\n" +
           'Score: ' + totalScore);
         document.location.reload();
+        //сохранение результата
+        var numberGame = localStorage.length + 1;
+        localStorage.setItem(numberGame + ' Score', totalScore)
 
       } else {
         //стартовая позиция
@@ -254,8 +277,8 @@ function mouseMoveHandler(e) {
 //функция старта игры
 function startGame(e) {
   if (e.keyCode == 32) {
-    dx = 3 + level;
-    dy = -3 - level;
+    dx = 7 + level;
+    dy = -10 - level;
   }
 
 }
@@ -274,12 +297,12 @@ function collisionDetection() {   //отталкиваемся от кирпич
         ) {
           dy = -dy;
           b.status = 0;
-          if(itSound){
-            if(itSoundPump){
+          if (itSound) {
+            if (itSoundPump) {
               brickBump(); //звук удара о кирпич
             }
           }
-          
+
           score++;
           totalScore++
           if (score == brickRowCount * brickColumnCount) {
@@ -323,6 +346,6 @@ function drawLives() {
 function drawLevel() {
   ctx.font = '16px Arial';
   ctx.fillStyle = '0095DD';
-  ctx.fillText("Level: " + level , canvas.width - 275, 20);
+  ctx.fillText("Level: " + level, canvas.width - 275, 20);
 }
 draw();
