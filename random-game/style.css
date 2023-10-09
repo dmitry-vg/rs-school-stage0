@@ -94,6 +94,7 @@ canvas {
   background: #eee;
   display: block;
   margin: 3em auto;
+  max-height: 320px;
   
 }
 .header {
@@ -166,3 +167,48 @@ h1 {
   display: block;
   font-size: xx-large;
 }
+
+.score p{
+  font-size: xx-large;
+}
+table {
+  margin-top: 5%;
+  font-size: x-large;
+border-radius: 10px;
+border-spacing: 0;
+text-align: center;
+}
+th {
+  background: #474747;
+  color: white;
+  text-shadow: 0 1px 1px #2D2020;
+  padding: 10px 20px;
+  }
+  th, td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+  }
+  th:first-child, td:first-child {
+  text-align: left;
+  }
+  th:first-child {
+  border-top-left-radius: 10px;
+  }
+  th:last-child {
+  border-top-right-radius: 10px;
+  border-right: none;
+  }
+  td {
+  padding: 10px 20px;
+  background: #36c8f6;
+  }
+  tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+  }
+  tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+  }
+  tr td:last-child {
+  border-right: none;
+  }
